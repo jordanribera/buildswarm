@@ -1,9 +1,16 @@
 # buildswarm
 a swarm of buildkite agents
 
+### setup
+**agent token:** make a copy of `configuration/secret.env.sample` and
+modify it, replacing `<token>` with your token.
+
+**ssh keys:** copy your git-authorized key to `configuration/id_rsa`
+
 
 ### running
-**on osx/linux:** `./start.sh 8` will create 8 buildkite agents.
+**on osx/linux:** `./start.sh` will create a buildkite agent.
 
-**on windows:** `./start/ps1 8 -daemon` will start the agents in the
-background.
+**options:** `./start.sh 8 -d` will start 8 agents in the background.
+
+**on windows:** `./start/ps1 8 -d` will do the same.

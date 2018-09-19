@@ -2,10 +2,10 @@
 
 export BUILDSWARM_CLUSTER=$HOSTNAME
 
-agents=8
+agents=1
 if [ $# == 1 ]
 then
-  if [ $1 == '-daemon' ]
+  if [ $1 == '-d' ]
   then
     daemon=1
   else
