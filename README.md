@@ -5,7 +5,7 @@ a swarm of buildkite agents
 **agent token:** make a copy of `configuration/secret.env.sample` and
 modify it, replacing `<token>` with your token.
 
-**ssh keys:** copy your git-authorized key to `configuration/id_rsa`
+**ssh keys:** copy your git-authorized key to `configuration/id_rsa`.
 
 
 ## running
