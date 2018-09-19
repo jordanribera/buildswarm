@@ -3,3 +3,4 @@ id_rsa
 id_rsa.pub
 
 .DS_Store
+configuration/secret.env
