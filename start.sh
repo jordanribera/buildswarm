@@ -1,6 +1,21 @@
 #!/bin/bash
 
-export HOSTNAME=$HOSTNAME
+export BUILDSWARM_CLUSTER=$HOSTNAME
+
+agents=8
+if [$# == 1] then
+  if ! [$* == '-daemon'] then
+    agents=$1
+  fi
+elif [$# == 2] then
+  agents=$1
+fi
+
 docker-compose down
 docker-compose build --no-cache
-docker-compose up --scale agent=$1
+
+if [$* == '-daemon'] then
+  docker-compose up -d --scale agent=$agents
+else
+  docker-compose up --scale agent=$agents
+fi
