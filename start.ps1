@@ -4,7 +4,7 @@ param(
 )
 
 $env:COMPOSE_CONVERT_WINDOWS_PATHS=1
-$env:HOSTNAME=$env:computername.ToLower()
+$env:BUILDSWARM_CLUSTER=$env:computername.ToLower()
 
 docker-compose down
 docker-compose build --no-cache
