@@ -13,4 +13,4 @@ modify it, replacing `<token>` with your token.
 
 **options:** `./start.sh 8 -d` will start 8 agents in the background.
 
-**on windows:** `./start/ps1 8 -d` will do the same.
+**on windows:** `./start.ps1 8 -d` will do the same.
