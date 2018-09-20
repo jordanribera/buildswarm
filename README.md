@@ -2,7 +2,7 @@
 a swarm of buildkite agents
 
 ## setup
-**dependencies:** you will need to be able to run `docker-compose`
+**dependencies:** you will need to be able to run `docker-compose`.
 
 **agent token:** make a copy of `configuration/secret.env.sample` and
 modify it, replacing `<token>` with your token.
