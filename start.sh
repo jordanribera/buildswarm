@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#name the cluster after the host
 export BUILDSWARM_CLUSTER=$HOSTNAME
 
 # default to 1 agent
