@@ -2,6 +2,7 @@
 
 export BUILDSWARM_CLUSTER=$HOSTNAME
 
+# default to 1 agent
 agents=1
 if [ $# == 1 ]
 then

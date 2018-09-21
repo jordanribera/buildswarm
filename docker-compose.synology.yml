@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  agent:
+    build: .
+    env_file:
+      - configuration/secret.env
+    environment:
+      BUILDKITE_HOOKS_PATH: "/buildswarm/hooks"
+      BUILDKITE_AGENT_NAME: "swarm-${BUILDSWARM_CLUSTER}-%hostname"
+    volumes:
+      - /volume1/docker/docker.sock:/var/run/docker.sock
