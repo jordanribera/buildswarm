@@ -6,11 +6,11 @@ param(
 $env:COMPOSE_CONVERT_WINDOWS_PATHS=1
 $env:BUILDSWARM_CLUSTER=$env:computername.ToLower()
 
-docker-compose down
-docker-compose build --no-cache
+docker-compose -f docker-compose.windows.yml down
+# docker-compose build --no-cache
 
 If ($d -eq $true) {
-    docker-compose up -d --scale agent=$agents
+    docker-compose -f docker-compose.windows.yml up -d --scale agent=$agents
 } Else {
-    docker-compose up --scale agent=$agents
+    docker-compose -f docker-compose.windows.yml up --scale agent=$agents
 }
