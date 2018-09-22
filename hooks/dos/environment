@@ -1,0 +1,12 @@
+#!/bin/bash
+# set -euo pipefail
+
+# because people are fools
+mkdir /buildkite-secrets
+cp /buildkite-secrets-lax/id_rsa_buildkite_git \
+   /buildkite-secrets/id_rsa_buildkite_git
+chmod 600 /buildkite-secrets/id_rsa_buildkite_git
+
+# register the mounted key
+eval "$(ssh-agent -s)"
+ssh-add -k /buildkite-secrets/id_rsa_buildkite_git

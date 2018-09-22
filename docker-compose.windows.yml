@@ -8,6 +8,6 @@ services:
     environment:
       BUILDKITE_AGENT_NAME: "swarm-${BUILDSWARM_CLUSTER}-%hostname"
     volumes:
-      - ./hooks/nix:/buildkite/hooks
-      - ./buildkite-secrets:/buildkite-secrets
+      - ./hooks/dos:/buildkite/hooks
+      - ./buildkite-secrets:/buildkite-secrets-lax
       - /var/run/docker.sock:/var/run/docker.sock
