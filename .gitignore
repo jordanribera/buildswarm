@@ -6,3 +6,4 @@ id_rsa_buildkite_git.pub
 
 .DS_Store
 secret.env
+github.rsa

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buildswarm-deployment
+  labels:
+    app: buildswarm
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: buildswarm
+  template:
+    metadata:
+      labels:
+        app: buildswarm
+    spec:
+      containers:
+        - name: buildswarm
+          image: gcr.io/spiralpower/buildkite-agent
+          volumeMounts:
+            - name: github
+              readOnly: true
+              mountPath: "/secrets/github"
+          env:
+            - name: BUILDKITE_AGENT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: buildkite-agent-token
+                  key: token
+      volumes:
+      - name: github
+        secret:
+          secretName: buildkite-agent-github
